@@ -1,0 +1,24 @@
+.chatinput{
+
+    border-radius: 20px;
+}
+
+ .chatinput >form{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.chatinput > form > input{
+position: fixed;
+bottom: 30px;
+width: 60%;
+border: 2px solid rgb(169, 169, 169);
+padding: 25px;
+
+}
+
+.chatinput > form > button{
+
+    display: none !important;
+}
