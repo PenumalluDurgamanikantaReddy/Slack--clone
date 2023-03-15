@@ -46,13 +46,13 @@ useEffect(() => {
       <CreateIcon/>
 
       </div>
-      <SidebarOptions Icon={InsertCommentIcon} title={"threads"}/>
+       <SidebarOptions Icon={InsertCommentIcon} title={"threads"}/>
       <SidebarOptions Icon={InboxIcon} title={"Inbox"}/>
-      <SidebarOptions Icon={BookmarkBorderIcon} title={"Bookmark"}/>
+ 
       <SidebarOptions Icon={PeopleIcon} title={"People"}/>
-      <SidebarOptions Icon={AppsIcon} title={"Apps"}/>
-      <SidebarOptions Icon={FileCopyIcon} title={"FileCopy"}/>
-      <SidebarOptions Icon={ExpandLessIcon} title={"ExpandLess"}/>
+  
+     
+  
       <hr/>
       <SidebarOptions Icon={ExpandMoreIcon}   title={"Channels"}/>
       <hr/>
@@ -64,3 +64,7 @@ useEffect(() => {
 }
 
 export default Sidebar
+// <SidebarOptions Icon={ExpandLessIcon} title={"ExpandLess"}/>
+// <SidebarOptions Icon={FileCopyIcon} title={"FileCopy"}/>
+// <SidebarOptions Icon={BookmarkBorderIcon} title={"Bookmark"}/>
+// <SidebarOptions Icon={AppsIcon} title={"Apps"}/>
