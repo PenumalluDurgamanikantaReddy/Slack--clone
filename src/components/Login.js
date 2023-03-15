@@ -8,11 +8,21 @@ import { actionTypes } from '../store/Reducer';
 function Login() {
   const [state,dispatch]=useContextDATA()
     const slackLogo="https://daily-dev-tips.com/ezoimgfmt/cdn.hashnode.com/res/hashnode/image/upload/v1647545127005/74GQszMw8.png?ezimgfmt=rs:380x380/rscb2/ngcb2/notWebP"
- 
+   
     const signinHandler=(event)=>{
         // event.preventDefault()
      signInWithPopup(auth, provider)
         .then((result)=>{
+         let mail =result.user.email
+         const url = 'https://slack-80008-default-rtdb.firebaseio.com/.json';
+         const requestOptions = {
+           method: 'POST',
+           headers: {
+             'Content-Type': 'application/json',
+           },
+           body: JSON.stringify({ email: mail }),
+         };
+         fetch(url, requestOptions)
           console.log(result)
           dispatch({
             type:actionTypes.SET__USER,
@@ -29,7 +39,7 @@ function Login() {
       <div className='login__container'>
       <img src={slackLogo}/>
       <h1>Sign in to Slack</h1>
-      <p>slack.com</p>
+          <p>slack.com</p>
       <Button onClick={signinHandler}>Sign In With Google</Button>
       </div>
     </div>
