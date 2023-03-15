@@ -6,13 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { ContextProvider } from './store/UserContext';
 import { initialState, } from './store/Reducer';
 import reducer from './store/Reducer';
-
+import { Provider } from 'react-redux';
+import Store from './store/ReduxStore';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <ContextProvider initialState={initialState} reducer={reducer}>
+   <Provider store={Store}>
     <App />
+    </Provider>
     </ContextProvider>
+
   </React.StrictMode>
 );
 

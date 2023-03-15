@@ -9,9 +9,12 @@ import { Fragment } from 'react';
 import Chat from './components/Chat';
 import Login from './components/Login';
 import { useContextDATA } from './store/UserContext';
+import { useSelector } from 'react-redux';
+import Options from './components/Options';
 function App() {
   // const [user, Setuser] = useState(null)
   const [{user},dispatch]    =     useContextDATA()
+  const channelView=useSelector((state)=>{ return state.viewmanage.channnelView})
   return (
     <div className="App">
 <BrowserRouter>
@@ -24,7 +27,13 @@ function App() {
    <Sidebar/>
   <Switch>
   <Route path="/channels/:channelId">
-   <Chat/>
+  {channelView&&
+    <Chat/>
+  }
+  {
+    !channelView&&
+    <Options/>
+  }
   </Route>
   <Route path="/">
 <h1>Welcome</h1>

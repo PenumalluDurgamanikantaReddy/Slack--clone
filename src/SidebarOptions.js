@@ -4,19 +4,25 @@ import db from './firebase'
 import "./sidebaroptions.css"
 import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { async } from '@firebase/util';
-
+import { useDispatch } from 'react-redux';
+import { reduxActions } from './store/ReduxStore';
 function SidebarOptions(props) {
   let Icon  = props.Icon
   let title=props.title
   let addChannel=props.AddChannel
 let id=props.id
+const dispatch=useDispatch()
 const history=useHistory()
   const selectChannel=()=>{
   if(id){
+    dispatch(reduxActions.SelectChannel(true))
 history.push(`/channels/${id}`)
+
   }
   else{
     // history.push(`/channels/${title}`)
+    // dispatch
+    dispatch(reduxActions.Selectoption(false))
     history.push(title)
 
   }

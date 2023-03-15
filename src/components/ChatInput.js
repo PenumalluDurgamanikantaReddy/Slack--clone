@@ -23,7 +23,8 @@ const inputMsgHandler=(event)=>{
              usermsg:input,
              userimg:user.photoURL,
              username:user.displayName,
-             timestamp:serverTimestamp()
+             timestamp:serverTimestamp(),
+             status:"unread"
           })
         }
     }

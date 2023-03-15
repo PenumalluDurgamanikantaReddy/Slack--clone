@@ -1,7 +1,8 @@
 
 import React,{useEffect,useState} from 'react'
 import "./chat.css"
-import { collection, onSnapshot,docs,doc,query, orderBy } from "firebase/firestore";
+import {
+  collection,onSnapshot,docs,doc,query,orderBy,getDocs,getFirestore,} from 'firebase/firestore'
 import db from '../firebase';
 import { useParams } from 'react-router-dom'
 import StarBorderIcon from '@mui/icons-material/StarBorder';
@@ -11,6 +12,7 @@ import ChatInput from './ChatInput';
 function Chat() {
     const {channelId}=useParams()
     const [roomDetails,SetroomDetails]=useState(null)
+    const [optionDetails,SetoptionDetails]=useState()
     const [allroomMsgs,SetallroomMsgs]=useState([])
     useEffect(() => {
 
@@ -31,20 +33,20 @@ SetallroomMsgs(msgsdata)
 // return ()=>holdata();
  }, [channelId]);
 
-console.log(roomDetails)
-console.log(allroomMsgs)
+// console.log(roomDetails)
+// console.log(allroomMsgs)
   return (
     <div className='chat'>
 <div className='chat__header'>
       <div className='chat__headerleft'>
-      <h4 className='Channel_Name'>#{roomDetails?roomDetails.name:"genereal"}  <StarBorderIcon/> </h4>
+      <h4 className='Channel_Name'>#{roomDetails&&roomDetails.name}  <StarBorderIcon/> </h4>
       </div>
       <div className='chat__headerright'><p><InfoOutlinedIcon/>Details</p></div>
       </div>
       <div className='chat__messages'>
       {
-        allroomMsgs.map((eachmsg)=>{ return (
-           <Message userimg={eachmsg.userimg} key={eachmsg.id} username={eachmsg.username} usermsg={eachmsg.usermsg} timestamp={eachmsg.timestamp}  />
+        allroomMsgs.map((eachmsg,index)=>{ return (
+           <Message userimg={eachmsg.userimg} key={index} username={eachmsg.username} usermsg={eachmsg.usermsg} timestamp={eachmsg.timestamp}  />
         )})
       }
     

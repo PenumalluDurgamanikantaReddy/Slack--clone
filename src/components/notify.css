@@ -1,0 +1,47 @@
+.notification__container__msgs{
+left:0.2rem;
+position: relative;
+   background-color: rgb(244, 244, 244); 
+   /* width:120rem; */
+   width: 120rem;
+   border-radius: 5px;
+   height: 3rem;
+   border-top: 1px;
+   border-bottom: 1px solid rgb(139, 139, 139);
+   display: flex;
+  gap: 8rem;
+  align-items: center;
+  text-align: left;
+}
+
+.notification__text{
+   display: flex;
+   gap: 8rem;
+   align-items: center;
+   left: 5rem;
+   position: relative;
+}
+/* .notification__text__channelname{
+
+   left:0px;
+   position: absolute;
+}
+.notification__text__username{
+
+   left:100px;
+   position: absolute;
+}
+
+.notification__text__msgtext{
+   
+  
+} */
+
+.notification__text__channelname{
+
+   width: 2rem;
+}
+
+.notification__text__username{
+   width: 12rem;
+}
