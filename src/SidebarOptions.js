@@ -6,6 +6,7 @@ import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
 import { async } from '@firebase/util';
 import { useDispatch } from 'react-redux';
 import { reduxActions } from './store/ReduxStore';
+
 function SidebarOptions(props) {
   let Icon  = props.Icon
   let title=props.title
@@ -22,7 +23,9 @@ history.push(`/channels/${id}`)
   else{
     // history.push(`/channels/${title}`)
     // dispatch
+    console.log()
     dispatch(reduxActions.Selectoption(false))
+    dispatch(reduxActions.SelectedOption(title))
     history.push(title)
 
   }
