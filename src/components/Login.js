@@ -29,7 +29,7 @@ function Login() {
       <div className='login__container'>
       <img src={slackLogo}/>
       <h1>Sign in to Slack</h1>
-      <p>Aaron.slack.com</p>
+      <p>slack.com</p>
       <Button onClick={signinHandler}>Sign In With Google</Button>
       </div>
     </div>
