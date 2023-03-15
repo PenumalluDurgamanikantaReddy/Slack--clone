@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { configureStore } from "@reduxjs/toolkit";
 
-const data={channnelView:true}
+const data={channnelView:true,optionSelected:"defualt"}
 
 const datareducer=createSlice({
     name:"option",
@@ -9,9 +9,14 @@ const datareducer=createSlice({
     reducers:{
         Selectoption(state,action){
             state.channnelView=action.payload
+            // console.log(state.channnelView)
         },
         SelectChannel(state,action){
             state.channnelView=action.payload
+        },
+        SelectedOption(state,action){
+            state.optionSelected=action.payload
+            console.log(action.payload)
         }
 
     }
