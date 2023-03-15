@@ -31,11 +31,11 @@ position: relative;
    left:100px;
    position: absolute;
 }
-
+*/
 .notification__text__msgtext{
-   
+   width: 12rem;
   
-} */
+} 
 
 .notification__text__channelname{
 
@@ -44,4 +44,9 @@ position: relative;
 
 .notification__text__username{
    width: 12rem;
+}
+
+.notification__text__time{
+   width: 22rem;
+
 }
