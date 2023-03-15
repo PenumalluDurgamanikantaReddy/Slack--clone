@@ -1,8 +1,30 @@
-.inbox{
-    left:16.7rem;
+/* .inbox{
+    /* left:16.7rem;
     position: absolute;
-}
+       
+   overflow-y: scroll;
+   padding-bottom: 150px; 
+} */
 
 .option{
-    height:auto;
+    left:16.7rem;
+    position: absolute;
+    height: 100vh;
+   overflow-y: scroll;
+   padding-bottom: 150px;
+   width: 95rem;
+   align-items: center;
+}
+
+.mails{
+    top: 10rem;
+    left:35rem;
+    position: relative;
+}
+
+.emailslist{
+    top: 2rem;
+    left:1rem;
+    position: relative;
+    font-size: larger;
 }
